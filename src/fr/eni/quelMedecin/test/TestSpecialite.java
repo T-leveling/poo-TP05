@@ -1,21 +1,17 @@
-package fr.eni.quelmedecin.test;
+package fr.eni.quelMedecin.test;
+
+import fr.eni.quelMedecin.bo.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-import fr.eni.quelmedecin.bo.Adresse;
-import fr.eni.quelmedecin.bo.Creneau;
-import fr.eni.quelmedecin.bo.MedecinGeneraliste;
-import fr.eni.quelmedecin.bo.MedecinSpecialiste;
-import fr.eni.quelmedecin.bo.Patient;
-import fr.eni.quelmedecin.bo.RendezVous;
 
 public class TestSpecialite {
 
 	private static Adresse sh = new Adresse("ZAC du Moulin Neuf", 2, "B", "rue Benjamin Franklin", 44800,
 			"Saint Herblain");
 	private static MedecinGeneraliste melanie = new MedecinGeneraliste("Malalaniche", "Mélanie", "02.28.03.17.28", sh);
-	private static MedecinSpecialiste celine = new MedecinSpecialiste("OCENSEMAIME", "Céline", "0748159263", sh, "CARDILOGIE", 52);
+	private static MedecinSpecialiste celine = new MedecinSpecialiste("OCENSEMAIME", "Céline", "0748159263", sh, "CARDIOLOGIE", 52);
 
 	private static Adresse nio = new Adresse(19, null, "avenue Léo Lagrange", 79000, "Niort");
 	private static Patient adhemar = new Patient("Pamamobe", "Adhémar", "0753428619", 'M', 192112192020142l,

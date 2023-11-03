@@ -18,7 +18,7 @@ public class Creneau {
 	private int duree;
 	//association bidirectionnelle
 	//navigation vers MedecinGeneraliste 0..1
-	private MedecinGeneraliste medecin;
+	private Medecin medecin;
 
 	//CONSTRUCTEURS
 	/**
@@ -28,7 +28,7 @@ public class Creneau {
 	 * @param duree - durée du créneau en minutes
 	 * @param medecin - médecin possédant ce créneau
 	 */
-	public Creneau(LocalTime heureDebut, int duree, MedecinGeneraliste medecin) {
+	public Creneau(LocalTime heureDebut, int duree, Medecin medecin) {
 		this.setHeureDebut(heureDebut);
 		this.setDuree(duree);
 		this.setMedecin(medecin);
@@ -87,9 +87,9 @@ public class Creneau {
 	/**
 	 * Getter pour medecin.
 	 * @return le medecin
-	 * @see Creneau#setMedecin(MedecinGeneraliste)
+	 * @see Creneau#setMedecin(Medecin)
 	 */
-	public MedecinGeneraliste getMedecin() {
+	public Medecin getMedecin() {
 		return medecin;
 	}
 
@@ -98,7 +98,7 @@ public class Creneau {
 	 * @param medecin - le medecin
 	 * @see Creneau#getMedecin()
 	 */
-	public void setMedecin(MedecinGeneraliste medecin) {
+	public void setMedecin(Medecin medecin) {
 		this.medecin = medecin;
 	}
 

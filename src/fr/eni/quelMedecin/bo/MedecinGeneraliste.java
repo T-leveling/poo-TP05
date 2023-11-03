@@ -6,9 +6,7 @@ package fr.eni.quelMedecin.bo;
  * @author ENI
  * @version 2.0
  */
-public class MedecinGeneraliste extends Personne {
-
-	private Creneau[] creneaux = new Creneau[MAX_CRENEAUX];
+public class MedecinGeneraliste extends Medecin {
 
 	private static int tarif = 25;
 
@@ -23,27 +21,11 @@ public class MedecinGeneraliste extends Personne {
 	public void afficher() {
 		System.out.println(this.getNom().toUpperCase() + " " + this.getPrenom());
 		System.out.println("Téléphone : " + this.getNumeroDeTelephone());
-
-		if (this.getAdresse() != null) {
-			this.getAdresse().afficher();
-		}
-		System.out.println("Créneaux :");
+		this.afficherAdresseEtCreneaux();
 		}
 	
 
-	void ajouterCreneau(Creneau creneauAAjouter) {
-		if (this != creneauAAjouter.getMedecin()) {
-			System.err.println("Ce créneau ne peut être associé à ce médecin car il est déjà associé à un autre");
-		} else {
-			int pos = 0;
-			while (pos < this.creneaux.length && this.creneaux[pos] != null)
-				pos++;
-			if (pos == this.creneaux.length)
-				System.err.println("Trop de créneaux sont affectés à ce médecin");
-			else
-				this.creneaux[pos] = creneauAAjouter;
-		}
-	}
+
 
 	/**
 	 * Getter pour tarif.
@@ -67,18 +49,5 @@ public class MedecinGeneraliste extends Personne {
 
 
 
-	public void afficherAdresseEtCreneaux() {
-		if (this.creneaux == null) {
-			System.out.println("Aucun creneau");
-		} else {
-			for (Creneau creneau : this.creneaux) {
-				if (creneau != null){
-					creneau.afficher();
-				}
-			}
 
-			System.out.println("Adresse : ");
-			this.getAdresse().afficher();
-		}
-	}
 }
